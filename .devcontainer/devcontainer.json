@@ -1,12 +1,16 @@
 {
-  "name": "C++ Dev Env with GCC 14 & GTest",
+  "name": "C++ Dev Container",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
-    "ghcr.io/devcontainers/features/gcc:1": {
-      "version": "14"
-    },
-    "ghcr.io/devcontainers/features/cmake:1": {},
-    "ghcr.io/devcontainers/features/googletest:1": {}
+    "ghcr.io/devcontainers/features/gcc": {}
   },
-  "postCreateCommand": "cmake -S . -B build && cmake --build build"
+  "postCreateCommand": "sudo apt update && sudo apt install -y cmake gdb",
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "extensions": [
+    "ms-vscode.cpptools",
+    "ms-vscode.cmake-tools"
+  ],
+  "remoteUser": "vscode"
 }
