@@ -1,0 +1,12 @@
+{
+  "name": "C++ Dev Env with GCC 14 & GTest",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/gcc:1": {
+      "version": "14"
+    },
+    "ghcr.io/devcontainers/features/cmake:1": {},
+    "ghcr.io/devcontainers/features/googletest:1": {}
+  },
+  "postCreateCommand": "cmake -S . -B build && cmake --build build"
+}
